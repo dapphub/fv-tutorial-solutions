@@ -1,7 +1,7 @@
 The transfer function of DemurrageToken has varying behaviour based on the 
 time passed since last extraction. Since the klab `act` format is fairly 
-opnionated in that it requires acts to only have one "success" case 
-behaviour, we need to specify the two cases in two different acts.
+opinionated in that it requires acts to only have one "success" case 
+behaviour, we need to specify the two cases as two different acts.
 
 ```
 behaviour transfer-with-demurrage of DemurrageToken
@@ -49,6 +49,7 @@ storage
 iff in range uint256
     FromBal - Value
     ToBal + Value
+    TIME - CallerLastTouched
 
 if
     VGas >= 100000
